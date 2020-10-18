@@ -1,5 +1,11 @@
 'use strict';
 
+// In case multiple BLE adapters are installed. Set noble HCI device id environment variable int <device> to select adapter, hci0 is used as default
+const set_hci = function(device) {
+	process.env['NOBLE_HCI_DEVICE_ID'] = device;
+	return;
+};
+
 // Canonicalize hexadecimal string <hex_string> by removing all non-hexadecimal characters, and converting all hex digits to lower case
 const canonicalize_hex_string = function(hex_string) {
 	return hex_string.replace(/[^0-9A-Fa-f]/g, '').toLowerCase();
