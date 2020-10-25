@@ -1,6 +1,6 @@
 'use strict';
 
-// In case multiple BLE adapters are installed. Set noble HCI device id environment variable int <device> to select adapter, hci0 is used as default
+// Set noble HCI device id evironment variable <device>, hci0 is used as default
 const set_hci = function(device) {
 	process.env['NOBLE_HCI_DEVICE_ID'] = device;
 	return;
@@ -700,6 +700,7 @@ module.exports = {
 		peripheral: connect_to_peripheral,
 		service: connect_to_service,
 	},
+	set_hci: set_hci,
 	connect_to_characteristic: connect_to_characteristic,
 	connect_to_peripheral: connect_to_peripheral,
 	connect_to_service: connect_to_service,
